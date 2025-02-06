@@ -15,9 +15,61 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Marykate Regular';
+    src: url('fonts/Marykate\ Regular.woff2') format('woff2'),
+         url('fonts/Marykate\ Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 body {
     background-color: hwb(53 52% 0%);
 }
+
+.slideshow {
+    position: relative;
+    width: 250px;
+    height: 350px;
+    overflow: hidden;
+    /*border: 1.5px solid rgb(76, 69, 69);*/
+    border-radius: 20px;
+    margin-left: 60px;
+    
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    /*transition: opacity 0.8s ease-in-out;*/
+    text-align: center;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-80%);
+    background: none;
+    color: rgb(76, 69, 69);
+    border: none;
+    padding: 5px 5px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+}
+
+.prev { left: -30px; }
+.next { right: -30px; }
 
    .button1 {
     text-align: center;
@@ -56,17 +108,26 @@ input[type="text"] {
     margin-bottom: 30px;
 }
 .header_text {
-    font-family: 'Cupid Love', Arial, sans-serif;
-    font-size: 35px;
+    font-family: 'Marykate Regular', Arial, sans-serif;
+    font-size: 25px;
     color: rgb(76, 69, 69);
     text-align: center;
+    letter-spacing: 0px;
+    width: 300px;
+    margin-top: -45px;
+    transform: translateX(30px);
+
 }
 
-.header_text245 {
-    font-family: 'Love Letters', Arial, sans-serif !important;
+.header_text124 {
+    font-family: 'Love Letters', Arial, sans-serif ;
+    font-weight: normal !important;
+    font-style: normal !important;
     font-size: 80px;
-    color: rgb(76, 69, 69);
     text-align: center;
+    color:  hwb(327 46% 7%);
+    -webkit-text-stroke: 0.8px black;
+    background-color: none;
     
 }
 
@@ -76,6 +137,7 @@ input[type="text"] {
     color: rgb(76, 69, 69);
     text-align: left;
     margin-bottom: 6px;
+
 }
 
 .copy-container {
@@ -85,19 +147,16 @@ input[type="text"] {
     margin-top: -20px;
 }
 
-/* ✅ Title */
 .copy-title {
     font-size: 16px;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
-/* ✅ Hide elements initially */
 .hidden {
     display: none;
 } 
 
-/* ✅ Generated link display */
 #result {
     background: #ffffff;
     padding: 10px;
@@ -116,7 +175,6 @@ input[type="text"] {
 }
 
 
-/* ✅ Copy button */
 .copy-btn {
     background: none;
     border: none;
@@ -137,7 +195,6 @@ input[type="text"] {
     display: flex;
 }
 
-/* ✅ Generate link button */
 .generate-btn {
     background: hwb(327 70% 1%);
     color: rgb(76, 69, 69);
@@ -154,7 +211,6 @@ input[type="text"] {
     background: hwb(327 58% 11%);
 }
 
-/* ✅ Copy confirmation message */
 .copy-message {
     font-size: 12px;
     color: rgb(108, 184, 108);
@@ -196,9 +252,10 @@ input[type="text"] {
     }
 
 
-@media (min-width: 768px) {
+
+@media (min-width: 1024px) and (max-width: 1440px) {
     input[type="text"], .boxfill_text {
-        width: 400px; /* Smaller width for desktop */
+        width: 400px;
         font-size: 18px;
     }
 
@@ -212,6 +269,22 @@ input[type="text"] {
     }
     .copy-btn {
         margin-left: 520px;
+    }
+
+    .slideshow { 
+        transform: translateX(205%);
+    }
+
+    .header_text {
+        transform: translateX(180%);
+        margin-bottom: 20px;
+        margin-top: -60px;
+    }
+
+    .header_text124 {
+        transform: translateX(-1%);
+        font-size: 100px;
+        background: none;
     }
 
 }

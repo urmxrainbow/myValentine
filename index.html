@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create a Custom Message</title>
+    <title>Hi open this I have something to tell you!</title>
+    <link rel="icon" type="image/x-icon" href="pic/favicon-1.ico">
 
     <head> 
         <link rel="stylesheet" href="./styles.css">
@@ -17,8 +18,16 @@
         <option value="TH/index-th.html">ไทย</option>
     </select> -->
     
-    <h1 class = "header_text" >Create your website so you can send links to people! </h1>
+    <h1 class = "header_text124" >myValentine</h1>
+    <h2 class = "header_text" >Make unique links send to people you like! </h2>
     <!-- <h1 class = "header_text245" >Valentine </h1> -->
+    <!--<h2 class = "text-preview">Preview</h2> -->
+    <div class="slideshow">
+        <img src="pic/image1.jpg" class="slide active">
+        <img src="pic/image2.jpg" class="slide">
+        <button class="prev" onclick="prevSlide()">&#10094;</button>
+        <button class="next" onclick="nextSlide()">&#10095;</button>
+    </div>
 
     <div class="button1">
 
@@ -55,10 +64,10 @@
         
         <div class="copy-container hidden" >
 
-               <!-- Success Message -->
+               
                <p class="copy-message">Yay! u'r copy this link now!</p>
             
-                <h3 class = "text_result">Send this link!</h3>
+                <h3 class = "text_result">Click the link to Open</h3>
 
                 <p id="result" class="hidden" data-link=""></p>
 
@@ -82,9 +91,27 @@
     </div>
 
     <script>
-    function changeLanguage(lang) {
-            window.location.href = lang; // Redirect to selected language page
+
+        let slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        slides[index].classList.add('active');
         }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+        }
+
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+        }
+
+
+        
 
       function nextPage() {
             let name = encodeURIComponent(document.getElementById("nameInput").value);
@@ -92,7 +119,7 @@
             let msg2 = encodeURIComponent(document.getElementById("message2").value);
             let linkmsg3 = encodeURIComponent(document.getElementById("linkmessage3").value);
 
-            console.log("DEBUG: Sending linkmsg3 =", linkmsg3); // ✅ Debugging
+            console.log("DEBUG: Sending linkmsg3 =", linkmsg3);
 
             let url = `BemyValentine.html?name=${name}&msg1=${msg1}&msg2=${msg2}&linkmsg3=${encodeURIComponent(linkmsg3)}`;
             window.location.href = url;
@@ -108,9 +135,9 @@
     
     let resultElement = document.getElementById("result");
     resultElement.innerHTML = `<a href="${shareableLink}" target="_blank">${shareableLink}</a>`;
-    resultElement.dataset.link = shareableLink; // Store link for copying
+    resultElement.dataset.link = shareableLink;
 
-    // Show hidden elements (Copy Button & Result)
+    
     document.querySelector(".copy-btn").classList.remove("hidden");
     document.querySelector(".copy-container").classList.remove("hidden");
     resultElement.classList.remove("hidden");
@@ -118,12 +145,12 @@
 
 function copyToClipboard() {
     let resultElement = document.getElementById("result");
-    let textToCopy = resultElement.dataset.link; // Get link
+    let textToCopy = resultElement.dataset.link;
 
     if (textToCopy) {
         navigator.clipboard.writeText(textToCopy).then(() => {
             let message = document.querySelector(".copy-message");
-            message.style.opacity = "1"; // Show success message
+            message.style.opacity = "1";
             setTimeout(() => { message.style.opacity = "0"; }, 2000);
         }).catch(err => {
             console.error("Failed to copy:", err);
