@@ -1,0 +1,125 @@
+@font-face {
+    font-family: 'Cupid Love';
+    src: url('fonts/cute_love-webfont.woff2') format('woff2'),
+         url('fonts/cute_love-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Cupid Thai';
+    src: url('TH/Thaifont/PhakchiThin-Regular.woff2') format('woff2'),
+         url('TH/Thaifont/PhakchiThin-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    background-color: hwb(53 52% 0%);
+}
+
+#noButton {
+    position: absolute;
+    margin-left: 250px;
+    transition: 0.5s;
+    margin-bottom: 40px;
+    /*border: 0.5px solid rgb(76, 69, 69);*/
+}
+
+#yesButton {
+    position: absolute;
+    margin-right: 250px;
+    margin-bottom: 40px;
+    /*border: 0.5px solid rgb(76, 69, 69);*/
+}
+
+.header_text {
+    font-size: 80px;
+    color: rgb(76, 69, 69);
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 0px;
+    font-weight: normal;
+}
+
+
+body, #noButton, #yesButton, .header_text {
+    font-family: 'Cupid Love', Arial, sans-serif;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-left: 0px;
+    
+}
+
+.btn {
+    background-color: #FFB6C1;
+    color: rgb(255, 255, 255);
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 60px;
+    margin: 0px 120px;
+    cursor: pointer;
+    border: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+}
+
+.gif_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+@media (max-width: 767px) {
+    body {
+        height: 90vh;
+    }
+
+    .header_text {
+        font-size: 30px;
+    }
+
+    img {
+        height: 36vh;
+    }
+
+    .btn {
+        padding: 10px 35px;
+        font-size: 25px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1440px) {
+    .gif_container {
+        width: 300px;
+    }
+
+    body {
+        height: 90vh;
+    }
+
+    .header_text {
+        font-size: 28px;
+    }
+
+    img {
+        height: 36vh;
+    }
+
+    .btn {
+        padding: 10px 35px;
+        font-size: 25px;
+        margin: 0px 100px;
+    }
+}

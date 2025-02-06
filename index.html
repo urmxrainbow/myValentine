@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a Custom Message</title>
+
+    <head> 
+        <link rel="stylesheet" href="./styles.css">
+    </head>
+    
+</head>
+<body>
+
+    <!-- <select id="language-switcher" onchange="changeLanguage(this.value)">
+        <option value="index.html">English</option>
+        <option value="TH/index-th.html">ไทย</option>
+    </select> -->
+    
+    <h1 class = "header_text" >Create your website so you can send links to people! </h1>
+    <!-- <h1 class = "header_text245" >Valentine </h1> -->
+
+    <div class="button1">
+
+        <div class = botton11>
+             <h3 class = "boxfill_text"> 🍥 Recipient name</h3>
+               <input type="text" id="nameInput" placeholder="Enter recipient's name..." />
+               <br>
+        </div>
+
+        <div class = botton12>
+             <h3 class = "boxfill_text"> 🍒 Head massages </h3>
+                
+                <!-- <h4 class = "Example"> Ex. Yes! "Name" </h3> -->
+               <input type="text" id="message1" placeholder="Enter first message Yes! Aoxwiz" />
+               <br>
+        </div>
+        
+        <div class = botton13>
+             <h3 class = "boxfill_text"> 🖍️ Second message </h3> 
+               <!-- <h4 class = "Example"> Ex. I want to be your Valentine too!! </h4> -->
+            <input type="text" id="message2" placeholder="Enter message" />
+    
+        </div> 
+
+        <div class = botton14> 
+            <h3 class = "boxfill_text">🖇️ Add link</h3>
+
+            <input type="text" id="linkmessage3" placeholder="Enter the link" />
+               <br>
+
+        </div>
+
+         <button class="generate-btn" onclick="generateLink()">Generate Link</button>
+        
+        <div class="copy-container hidden" >
+
+               <!-- Success Message -->
+               <p class="copy-message">Yay! u'r copy this link now!</p>
+            
+                <h3 class = "text_result">Send this link!</h3>
+
+                <p id="result" class="hidden" data-link=""></p>
+
+                <!-- Hidden Copy Link Button -->
+                <button class="copy-btn" onclick="copyToClipboard()">
+                <img src="Icon/Content CopyIcon.png" alt="Copy Icon">
+                Copy link 
+                </button>
+        </div>
+
+        <div class="image-container">
+                <div class="footer">
+                    Made by<a class = "instagram" href="https://buymeacoffee.com/aoxwizz"> @aoxwizz</a></br>
+                    Thank you for visiting this website.
+                </div>
+        </div>
+
+        <!-- <a href="https://www.buymeacoffee.com/aoxwizz">
+        <img src="https://img.buymeacoffee.com/button-api/?text=Buy me a matcha pls 🥺&emoji=🍵&slug=aoxwizz&button_colour=ffbee2&font_colour=000000&font_family=Arial&outline_colour=000000&border=1pxsolidrgb(76, 69, 69)&coffee_colour=FFDD00" /></a>
+        -->
+    </div>
+
+    <script>
+    function changeLanguage(lang) {
+            window.location.href = lang; // Redirect to selected language page
+        }
+
+      function nextPage() {
+            let name = encodeURIComponent(document.getElementById("nameInput").value);
+            let msg1 = encodeURIComponent(document.getElementById("message1").value);
+            let msg2 = encodeURIComponent(document.getElementById("message2").value);
+            let linkmsg3 = encodeURIComponent(document.getElementById("linkmessage3").value);
+
+            console.log("DEBUG: Sending linkmsg3 =", linkmsg3); // ✅ Debugging
+
+            let url = `BemyValentine.html?name=${name}&msg1=${msg1}&msg2=${msg2}&linkmsg3=${encodeURIComponent(linkmsg3)}`;
+            window.location.href = url;
+        }
+
+        function generateLink() {
+    let name = encodeURIComponent(document.getElementById("nameInput").value);
+    let msg1 = encodeURIComponent(document.getElementById("message1").value);
+    let msg2 = encodeURIComponent(document.getElementById("message2").value);
+    let linkmsg3 = encodeURIComponent(document.getElementById("linkmessage3").value);
+
+    let shareableLink = `${window.location.origin}/BemyValentine.html?name=${name}&msg1=${msg1}&msg2=${msg2}&linkmsg3=${linkmsg3}`;
+    
+    let resultElement = document.getElementById("result");
+    resultElement.innerHTML = `<a href="${shareableLink}" target="_blank">${shareableLink}</a>`;
+    resultElement.dataset.link = shareableLink; // Store link for copying
+
+    // Show hidden elements (Copy Button & Result)
+    document.querySelector(".copy-btn").classList.remove("hidden");
+    document.querySelector(".copy-container").classList.remove("hidden");
+    resultElement.classList.remove("hidden");
+}
+
+function copyToClipboard() {
+    let resultElement = document.getElementById("result");
+    let textToCopy = resultElement.dataset.link; // Get link
+
+    if (textToCopy) {
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            let message = document.querySelector(".copy-message");
+            message.style.opacity = "1"; // Show success message
+            setTimeout(() => { message.style.opacity = "0"; }, 2000);
+        }).catch(err => {
+            console.error("Failed to copy:", err);
+        });
+    } else {
+        alert("No link to copy! Click Generate first.");
+
+}
+
+    }
+
+    
+    </script>
+
+</body>
+</html>

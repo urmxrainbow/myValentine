@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./yes_style.css">
+</head> 
+
+
+<body>
+
+    <div class="container">
+     
+        <div>
+            <h1 class="header_text" id="message1"></h1>
+            <h2 class="liteh_text" id="message2"></h2>
+        </div>
+
+        <div class="gif_container">
+            <img src="https://media.giphy.com/media/W3fbjOoLVKHGYHlJ4z/giphy.gif" alt="Cute animated illustration">
+        </div>
+
+        <div>
+            <a id="linkmessage3" href="#" target="_blank"></a>
+        </div>
+     </div>
+
+
+     <div class="footer">
+        Made by<a class = "instagram" href="https://buymeacoffee.com/aoxwizz"> @aoxwizz</a></br>
+        Thank you for visiting this website.
+    </div>
+
+    <button class="home" onclick="window.location.href='index.html'">
+        <img src="Icon/home.png" alt="Home" class="home-icon">
+    </button>
+       
+
+
+    <script>
+    function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return decodeURIComponent(urlParams.get(param) || ""); // Decode only ONCE
+    }
+
+            document.getElementById("message1").innerText = getQueryParam("msg1") || "Now you're my Valentine!";
+            document.getElementById("message2").innerText = getQueryParam("msg2") || "Happy Valentine's Day, baby!";
+
+
+    let message3Link = getQueryParam("linkmsg3");
+
+    console.log("DEBUG: Received linkmsg3 =", message3Link); // Debugging
+
+    if (!message3Link || message3Link.trim() === "") {
+        console.warn("WARNING: No link received. Using default.");
+        message3Link = "https://www.instagram.com/reel/C26iGtjrYg-/?igsh=azlxc2F0NnRzdWQw";
+    }
+
+    // ✅ Add `https://` if missing
+    if (!message3Link.startsWith("http://") && !message3Link.startsWith("https://")) {
+        message3Link = "https://" + message3Link;
+    }
+
+    let message3Element = document.getElementById("linkmessage3");
+    message3Element.href = message3Link;
+    message3Element.innerText = "Open the gift";
+</script>
+
+</body> 
+</html>

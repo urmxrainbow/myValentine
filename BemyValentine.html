@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Create a Custom Message</title>
+
+        <head>
+            <link rel = "stylesheet" href="./BemyVelentine.css">
+        </head>
+        
+    </head>
+
+    <body>
+        <div class="container">
+            <div >
+                <h1 class="header_text" id="nameInput">Hi </h1>
+                <h2 class = "header_text">Will you be my Valentine?</h2>
+            </div>
+            <div class="gif_container">
+                <img id="gif_container" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnpwNmxuNDcyOGkyYWJhazlldDRvcHhnYzJzc2xhOHlvbGJlZmQ1dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/SvvfK2dco188Wk4ZTq/giphy.gif" alt="Cute animated illustration">
+            </div>
+            <div class = "buttons">
+                <button class="btn" id = "yesButton" onclick="nextPage()">Yes</button>
+                <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">No</button>
+
+                <script>
+                    function getQueryParam(param) {
+                        const urlParams = new URLSearchParams(window.location.search);
+                        return urlParams.get(param);
+                    }
+
+                    document.getElementById("nameInput").innerText = `Hi ${getQueryParam("name") || "you"}!`;
+                
+                    function nextPage() {
+                        let name = getQueryParam("name") || "Baby";
+                        let msg1 = getQueryParam("msg1") || "Now you're My Valentine!";
+                        let msg2 = getQueryParam("msg2") || "Happy Valentine's Day!";
+                        let linkmsg3 = getQueryParam("linkmsg3"); // ✅ Ensure this retrieves the link
+                
+                        console.log("DEBUG: Passing name =", name);
+                        console.log("DEBUG: Passing msg1 =", msg1);
+                        console.log("DEBUG: Passing msg2 =", msg2);
+                        console.log("DEBUG: Passing linkmsg3 =", linkmsg3); // ✅ Debugging
+                
+                        if (!linkmsg3 || linkmsg3.trim() === "") {
+                            console.warn("WARNING: linkmsg3 is empty, but continuing.");
+                        }
+                
+                        let url = `yes.html?name=${encodeURIComponent(name)}&msg1=${encodeURIComponent(msg1)}&msg2=${encodeURIComponent(msg2)}&linkmsg3=${encodeURIComponent(linkmsg3 || "")}`;
+                        window.location.href = url;
+                    }
+
+                
+            
+                    // No button behavior
+                    var noButton = document.getElementById("noButton");
+                    var yesButton = document.getElementById("yesButton");
+                    var valentineImage = document.getElementById("gif_container");
+            
+                    var noTexts = [
+                        "NO?? REALLY?", 
+                        "WHAT did you just SAY???", 
+                        "Try AGAIN", 
+                        "If u say NO again, I gonna put a virus on ur phone!"
+                    ];
+                    
+                    var imageSources = [
+                        "https://media.giphy.com/media/lPM06f2zvk94jBAzlP/giphy.gif",
+                        "https://media.giphy.com/media/m9XLXeXcVxlZX0Mfps/giphy.gif",
+                        "https://media.giphy.com/media/js0lEnHUd26FSJ2lyu/giphy.gif",
+                        "https://media.giphy.com/media/eHWUyxudOQGCulzFFR/giphy.gif"
+                    ];
+            
+                    // Move and change text when "No" is clicked
+                    noButton.addEventListener("click", change);
+                
+                    function change() {
+                        var randomIndex = Math.floor(Math.random() * noTexts.length);
+                        var randomText = noTexts[randomIndex];
+                        noButton.innerText = randomText;
+                
+                        var i = Math.floor(Math.random() * 100);
+                        var j = Math.floor(Math.random() * 100);
+                        noButton.style.left = i + "px";
+                        noButton.style.top = j + "px";
+
+                        var currentWidth = yesButton.offsetWidth;
+                        var currentHeight = yesButton.offsetHeight
+                        yesButton.style.width = currentWidth + 30 + "px";
+                        yesButton.style.height = currentHeight + 10 + "px";
+                        var currentFontSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
+                        var newFontSize = currentFontSize + 10;
+                        yesButton.style.fontSize = newFontSize + "px";
+
+                
+                        var randomImageIndex = Math.floor(Math.random() * imageSources.length);
+                        valentineImage.src = imageSources[randomImageIndex];
+                    }
+                </script>
+                </script>
+                
+            </div>
+        </div>
+        
+
+    </body>
+</html>

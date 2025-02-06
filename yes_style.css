@@ -1,0 +1,185 @@
+@font-face {
+    font-family: 'Cupid Love';
+    src: url('fonts/cute_love-webfont.woff2') format('woff2'),
+         url('fonts/cute_love-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cupid Thai';
+    src: url('Thaifont/PhakchiThin-Regular.woff2') format('woff2'),
+         url('Thaifont/PhakchiThin-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: hwb(53 52% 0%);
+    margin: 0;
+    }
+
+.home-button {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1000;
+    }
+
+.home {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-top: 50px;
+    }
+    
+.home-icon {
+    width: 60px;
+    height: 60px;
+    transition: 0.3s;
+    z-index: 1000;
+    opacity: 0.7;
+    filter: brightness(80%);
+    }
+    
+.home-icon:hover {
+    opacity: 0.7;
+    filter: brightness(200%);
+    }
+
+
+.header_text {
+    font-size: 75px;
+    font-weight: normal;
+    color: rgb(76, 69, 69);
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 40px;
+    letter-spacing: 3px;
+}
+.liteh_text {
+    font-size: 60px;
+    font-weight: normal;
+    color: rgb(76, 69, 69);
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    letter-spacing: 3px;
+}
+a {
+    display: inline-block;
+    padding: 10px 35px;
+    font-size: 70px;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    color: #ffffff;
+    background-color: #FFB6C1;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border-radius: 60px;
+    /*border: 1px solid rgb(76, 69, 69);*/
+}
+
+.header_text, .liteh_text, a {
+    font-family: "Cupid Love", Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+/*.linkmessage3 {
+    padding: 10px 35px;
+} */
+
+.gif_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;}
+
+
+.footer {
+    font-family:'Cupid Love', Arial, sans-serif;
+    font-size: 20px;
+    color: rgb(76, 69, 69);
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    position: relative;
+    transform: translateY(230%);
+    }
+    
+.footer a {
+    display: inline;
+    margin: 0;
+
+    }
+    
+.instagram {
+    font-size: 30px;
+    color: rgb(76, 69, 69);
+    background-color: transparent;
+    padding: 0;
+    }
+
+
+@media (max-width: 767px) {
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+    a {
+        font-size: 40px;
+    }
+
+    .header_text {
+        margin-top: 100px;
+        font-size: 40px;
+    }
+
+    .gif_container { 
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+    }
+
+    body {
+        height: 90vh;
+    }
+
+    img {
+        height: 36vh;
+    }
+
+    .btn {
+        padding: 10px 35px;
+        font-size: 25px;
+        margin: 0px 100px;
+    }
+
+    .home-icon {
+        width: 50px;
+        height: 50px;
+        transform: translateY(-50%);
+    }
+
+    .footer a {
+        font-size: 24px;
+    }
+
+}
