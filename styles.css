@@ -249,13 +249,12 @@ input[type="text"] {
     .button1 {
         width: 90%;
     }
-    }
     input[type="text"] {
-    width: 90%;
+        width: 90%;
     }
 
     .boxfill_text {
-    margin-left: 9px;
+        margin-left: 9px;
     }
 
     .copy-btn {
@@ -263,10 +262,16 @@ input[type="text"] {
         transform: translateX(-30%);
     }
 
-    .slideshow { 
+    .slideshow {
         text-align: left;
-        transform: translateX(-0.8%);
+        margin: auto;
     }
+    .header_text {
+        margin-left: auto;
+        margin-right: auto;
+        transform: none;
+    }
+}
 
 
 
@@ -285,7 +290,7 @@ input[type="text"] {
         /* Styles for tablets */
     .slideshow { 
         text-align: left;
-        position: absolute;
+
         }
     .header_text124 { 
         transform: translateX(-10%);
@@ -307,7 +312,7 @@ input[type="text"] {
 
 
 
-@media (min-width: 1024px) and (max-width: 1440px) {
+@media (min-width: 1024px) {
     input[type="text"], .boxfill_text {
         width: 400px;
         font-size: 18px;
@@ -332,6 +337,10 @@ input[type="text"] {
     .header_text124 {
         transform: translateX(-35%);
 
+    }
+
+    .slideshow {
+        text-align: left;
     }
 
     .grouphead {
