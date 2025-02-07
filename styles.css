@@ -85,8 +85,8 @@ body {
     width: 200x;
     margin: auto;
 }
-    /* link button */
-    button {
+ /* link button */
+button {
     text-align: center;
     width: 200x;
     padding: 10px;
@@ -138,6 +138,8 @@ input[type="text"] {
     color:  hwb(327 46% 7%);
     -webkit-text-stroke: 0.8px black;
     background-color: none;
+    width: 200x;
+    margin-bottom: 60px;
     
 }
 
@@ -263,11 +265,12 @@ input[type="text"] {
 
     .slideshow { 
         text-align: left;
+        transform: translateX(-0.8%);
     }
 
 
 
-@media (max-width: 767px) {
+/* @media (max-width: 767px) {
     .slideshow { 
         text-align: left;
         transform: translateX(0.5px);
@@ -276,20 +279,31 @@ input[type="text"] {
         text-align: center;
     }
 
-    }
+    } */
     
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 510px) and (max-width: 1024px) {
         /* Styles for tablets */
     .slideshow { 
         text-align: left;
+        position: absolute;
         }
     .header_text124 { 
-        transform: translateX(-30%);
+        transform: translateX(-10%);
+        }
+    .button1 {
+        position: absolute;
+        transform: translateX(80%);
+        justify-content: center;
+        width: 400px;
+        }
+    .grouphead {
+        text-align: center;
+        justify-content: center;
+        transform: translateY(70%);
         }
     
 
-
-      }
+    }
 
 
 
@@ -311,6 +325,23 @@ input[type="text"] {
         margin-left: 520px;
     }
 
+    .button1 {
+        transform: translateY(-80%) translateX(10%);
+    }
+
+    .header_text124 {
+        transform: translateX(-35%);
+
+    }
+
+    .grouphead {
+        text-align: center;
+        justify-content: center;
+        transform: translateY(10%) translateX(10%);
+        }
+
+    /*
+
     .slideshow { 
         transform: translateX(205%);
     }
@@ -325,7 +356,8 @@ input[type="text"] {
         transform: translateX(-1%);
         font-size: 100px;
         background: none;
-    }
+    }*/
 
 }
+
 

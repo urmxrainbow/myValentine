@@ -155,9 +155,10 @@ a {
 
 @media (min-width: 768px) and (max-width: 1024px) {
     /* Styles for tablets */
+
   }
 
-  
+
 
 @media (min-width: 1024px) and (max-width: 1440px) {
     a {
@@ -165,8 +166,17 @@ a {
     }
 
     .header_text {
-        margin-top: 100px;
+        margin-top: 10px;
         font-size: 40px;
+    }
+
+    .liteh_text {
+        font-size: 30px;
+    }
+
+    .text_1 {
+        object-fit: cover
+
     }
 
     .gif_container { 
@@ -181,7 +191,7 @@ a {
     }
 
     img {
-        height: 36vh;
+        height: 30vh;
     }
 
     .btn {
@@ -201,8 +211,3 @@ a {
     }
 
 }
-
-
-@media (min-width: 1441px) {
-    /* Styles for large screens */
-  }
