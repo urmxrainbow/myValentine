@@ -124,7 +124,8 @@ input[type="text"] {
     letter-spacing: 0px;
     width: 300px;
     margin-top: -45px;
-    transform: translateX(30px);
+    transform: translateX(40px);
+    align-items: center;
 
 }
 
@@ -269,6 +270,7 @@ input[type="text"] {
 @media (max-width: 767px) {
     .slideshow { 
         text-align: left;
+        transform: translateX(0.5px);
         }
     .header_text124 { 
         text-align: center;
