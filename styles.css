@@ -26,6 +26,7 @@
 
 body {
     background-color: hwb(53 52% 0%);
+    text-align: center;
 }
 
 .slideshow {
@@ -71,7 +72,15 @@ body {
 .prev { left: -30px; }
 .next { right: -30px; }
 
-   .button1 {
+/*.container {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between;
+
+}*/
+
+.button1 {
     text-align: center;
     width: 200x;
     margin: auto;
@@ -250,6 +259,35 @@ input[type="text"] {
         margin-right: 100px;
         transform: translateX(-30%);
     }
+
+    .slideshow { 
+        text-align: left;
+    }
+
+
+
+@media (max-width: 767px) {
+    .slideshow { 
+        text-align: left;
+        }
+    .header_text124 { 
+        text-align: center;
+    }
+
+    }
+    
+@media (min-width: 768px) and (max-width: 1024px) {
+        /* Styles for tablets */
+    .slideshow { 
+        text-align: left;
+        }
+    .header_text124 { 
+        transform: translateX(-30%);
+        }
+    
+
+
+      }
 
 
 

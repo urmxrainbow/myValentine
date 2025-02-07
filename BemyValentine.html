@@ -4,7 +4,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>Create a Custom Message</title>
+          <title>Hi open this I have something to tell you!</title>
+            <link rel="icon" type="image/x-icon" href="pic/favicon-1.ico">
+
 
         <head>
             <link rel = "stylesheet" href="./BemyVelentine.css">
@@ -37,12 +39,12 @@
                         let name = getQueryParam("name") || "Baby";
                         let msg1 = getQueryParam("msg1") || "Now you're My Valentine!";
                         let msg2 = getQueryParam("msg2") || "Happy Valentine's Day!";
-                        let linkmsg3 = getQueryParam("linkmsg3"); // ✅ Ensure this retrieves the link
+                        let linkmsg3 = getQueryParam("linkmsg3");
                 
                         console.log("DEBUG: Passing name =", name);
                         console.log("DEBUG: Passing msg1 =", msg1);
                         console.log("DEBUG: Passing msg2 =", msg2);
-                        console.log("DEBUG: Passing linkmsg3 =", linkmsg3); // ✅ Debugging
+                        console.log("DEBUG: Passing linkmsg3 =", linkmsg3);
                 
                         if (!linkmsg3 || linkmsg3.trim() === "") {
                             console.warn("WARNING: linkmsg3 is empty, but continuing.");
@@ -54,7 +56,7 @@
 
                 
             
-                    // No button behavior
+                
                     var noButton = document.getElementById("noButton");
                     var yesButton = document.getElementById("yesButton");
                     var valentineImage = document.getElementById("gif_container");
@@ -73,7 +75,7 @@
                         "https://media.giphy.com/media/eHWUyxudOQGCulzFFR/giphy.gif"
                     ];
             
-                    // Move and change text when "No" is clicked
+                    
                     noButton.addEventListener("click", change);
                 
                     function change() {
@@ -98,7 +100,7 @@
                         var randomImageIndex = Math.floor(Math.random() * imageSources.length);
                         valentineImage.src = imageSources[randomImageIndex];
                     }
-                </script>
+                   </script>
                 </script>
                 
             </div>

@@ -49,19 +49,19 @@
 
     console.log("DEBUG: Received linkmsg3 =", message3Link);
 
-    if (!message3Link || message3Link.trim() === "") {
-        console.warn("WARNING: No link received. Using default.");
-        message3Link = "https://open.spotify.com/playlist/2hJTyeUCtCo8IxC3R0nIev?si=hAcu6iXTSO24FQmDb1o8MA&pi=a-vesAVl-nSM2m";
-    }
-
-    // ✅ Add `https://` if missing
-    if (!message3Link.startsWith("http://") && !message3Link.startsWith("https://")) {
-        message3Link = "https://" + message3Link;
-    }
-
     let message3Element = document.getElementById("linkmessage3");
-    message3Element.href = message3Link;
-    message3Element.innerText = "Open the gift";
+
+    if (!message3Link || message3Link.trim() === "") {
+        console.warn("WARNING: No link received. Hiding link.");
+        message3Element.style.display = "none";  // Hides the link if empty
+    } else {
+        if (!message3Link.startsWith("http://") && !message3Link.startsWith("https://")) {
+        message3Link = "https://" + message3Link;
+            }
+        message3Element.href = message3Link;
+        message3Element.innerText = "Open the gift";
+        message3Element.style.display = "block";
+}
 </script>
 
 </body> 

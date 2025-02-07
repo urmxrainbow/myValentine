@@ -87,14 +87,24 @@ a {
     border: none;
     color: #ffffff;
     background-color: #FFB6C1;
-    margin-top: 40px;
+    margin-top: 60px;
     margin-bottom: 40px;
     border-radius: 60px;
+    text-align: center;
     /*border: 1px solid rgb(76, 69, 69);*/
 }
 
 .header_text, .liteh_text, a {
     font-family: "Cupid Love", Arial, sans-serif;
+}
+
+#linkmessage3 {
+    max-width: 300px; 
+    max-height: 200px;
+    width: auto; 
+    font-size: 60px;
+    text-align: center;
+    transform: translateX(80%);
 }
 
 .container {
@@ -139,7 +149,15 @@ a {
 
 
 @media (max-width: 767px) {
+
+
 }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* Styles for tablets */
+  }
+
+  
 
 @media (min-width: 1024px) and (max-width: 1440px) {
     a {
@@ -183,3 +201,8 @@ a {
     }
 
 }
+
+
+@media (min-width: 1441px) {
+    /* Styles for large screens */
+  }
