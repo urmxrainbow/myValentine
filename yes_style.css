@@ -79,14 +79,11 @@ body {
     letter-spacing: 3px;
 }
 a {
-    display: inline-block;
-    padding: 10px 35px;
-    font-size: 70px;
     text-align: center;
     text-decoration: none;
     border: none;
-    color: #ffffff;
-    background-color: #FFB6C1;
+    /*color: #ffffff;
+    background-color: #FFB6C1; */
     margin-top: 60px;
     margin-bottom: 40px;
     border-radius: 60px;
@@ -99,12 +96,17 @@ a {
 }
 
 #linkmessage3 {
-    max-width: 300px; 
+    max-width: 200px; 
     max-height: 200px;
     width: auto; 
-    font-size: 60px;
+    font-size: 30px;
     text-align: center;
-    transform: translateX(80%);
+    color: #ffffff;
+    background-color: #FFB6C1;
+    transform: translateX(45%);
+    padding: 12px 15px;
+    margin-top: 60px;
+
 }
 
 .container {
@@ -148,13 +150,22 @@ a {
     }
 
 
-@media (max-width: 767px) {
+@media (max-width: 1024px) {
+
+    #linkmessage3 {
+    transform: translateX(64%);
+    font-size: 50px;
+    max-width: 300px; 
+    max-height: 250px;
+    padding: 12px 15px;
+
+    }
 
 
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-    /* Styles for tablets */
+    /* for tablets */
 
   }
 
@@ -175,7 +186,7 @@ a {
     }
 
     .text_1 {
-        object-fit: cover
+        margin-top: 177px;
 
     }
 
