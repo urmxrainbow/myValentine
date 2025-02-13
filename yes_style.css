@@ -96,16 +96,15 @@ a {
 }
 
 #linkmessage3 {
-    max-width: 200px; 
-    max-height: 200px;
-    width: auto; 
+    max-width: 200px;
+    height: auto; 
     font-size: 30px;
-    text-align: center;
+    /*text-align: center;*/
     color: #ffffff;
     background-color: #FFB6C1;
-    transform: translateX(45%);
     padding: 12px 15px;
-    margin-top: 60px;
+    /*margin-top: 60px;*/
+    margin: auto;
 
 }
 
@@ -153,13 +152,17 @@ a {
 @media (max-width: 1024px) {
 
     #linkmessage3 {
-    transform: translateX(64%);
     font-size: 50px;
     max-width: 300px; 
     max-height: 250px;
     padding: 12px 15px;
 
     }
+
+    .gif_container {
+        margin-top: 10px;
+    }
+
 
 
 }
@@ -171,7 +174,7 @@ a {
 
 
 
-@media (min-width: 1024px) and (max-width: 1440px) {
+@media (min-width: 1024px) and (max-width: 1440px){
     a {
         font-size: 40px;
     }
@@ -195,6 +198,7 @@ a {
         left: 50%;
         transform: translateX(-50%);
         width: 100px;
+        margin-top: 10px;
     }
 
     body {
@@ -204,6 +208,13 @@ a {
     img {
         height: 30vh;
     }
+
+    #linkmessage3 {
+        font-size: 30px;
+        max-width: 200px; 
+        height: auto;
+        padding: 12px 15px;
+
 
     .btn {
         padding: 10px 35px;
@@ -221,4 +232,16 @@ a {
         font-size: 24px;
     }
 
+    }
 }
+
+/* @media (min-width: 1440px) {
+    /*#linkmessage3 {
+        transform: translateX(64%);
+        font-size: 50px;
+        max-width: 300px; 
+        max-height: 250px;
+        padding: 12px 15px;
+    
+        }
+}*/
