@@ -69,6 +69,7 @@ body {
     margin-bottom: 40px;
     letter-spacing: 3px;
 }
+
 .liteh_text {
     font-size: 60px;
     font-weight: normal;
@@ -78,6 +79,7 @@ body {
     margin-bottom: 50px;
     letter-spacing: 3px;
 }
+
 a {
     text-align: center;
     text-decoration: none;
@@ -98,7 +100,7 @@ a {
 #linkmessage3 {
     max-width: 200px;
     height: auto; 
-    font-size: 30px;
+    font-size: 20px;
     /*text-align: center;*/
     color: #ffffff;
     background-color: #FFB6C1;
@@ -120,7 +122,13 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: auto;}
+    height: auto;
+}
+
+img {
+   margin-bottom: 25px;
+
+}
 
 
 .footer {
@@ -160,7 +168,7 @@ a {
     }
 
     .gif_container {
-        margin-top: 10px;
+        margin-top: 60px;
     }
 
 
@@ -174,9 +182,9 @@ a {
 
 
 
-@media (min-width: 1024px) and (max-width: 1440px){
+@media (min-width: 1024px) {
     a {
-        font-size: 40px;
+        font-size: 20px;
     }
 
     .header_text {
@@ -199,6 +207,7 @@ a {
         transform: translateX(-50%);
         width: 100px;
         margin-top: 10px;
+        margin-bottom: 0px;
     }
 
     body {
@@ -213,14 +222,14 @@ a {
         font-size: 30px;
         max-width: 200px; 
         height: auto;
-        padding: 12px 15px;
+        padding: 8px 8px;
 
 
-    .btn {
+    /*.btn {
         padding: 10px 35px;
         font-size: 25px;
         margin: 0px 100px;
-    }
+    }*/
 
     .home-icon {
         width: 50px;
@@ -233,6 +242,11 @@ a {
     }
 
     }
+    .home-icon {
+        width: 50px;
+        height: 50px;
+    }
+
 }
 
 /* @media (min-width: 1440px) {
