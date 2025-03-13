@@ -18,7 +18,7 @@
         <div class="container">
             <div >
                 <h1 class="header_text" id="nameInput">Hi </h1>
-                <h2 class = "header_text">Will you be my Valentine?</h2>
+                <h2 class = "header_text" id="questionInput"></h2>
             </div>
             <div class="gif_container">
                 <img id="gif_container" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnpwNmxuNDcyOGkyYWJhazlldDRvcHhnYzJzc2xhOHlvbGJlZmQ1dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/SvvfK2dco188Wk4ZTq/giphy.gif" alt="Cute animated illustration">
@@ -34,14 +34,17 @@
                     }
 
                     document.getElementById("nameInput").innerText = `Hi ${getQueryParam("name") || "you"}!`;
+                    document.getElementById("questionInput").innerText = `${getQueryParam("question") || "Will you be my Valentine?"}!`;
                 
                     function nextPage() {
                         let name = getQueryParam("name") || "Baby";
-                        let msg1 = getQueryParam("msg1") || "Now you're My Valentine!";
-                        let msg2 = getQueryParam("msg2") || "Happy Valentine's Day!";
+                        let question = getQueryParam("question") || "Will you be my Valentine?";
+                        let msg1 = getQueryParam("msg1") || "Awww, love you!";
+                        let msg2 = getQueryParam("msg2") || "Now you're My Valentine!";
                         let linkmsg3 = getQueryParam("linkmsg3");
                 
                         console.log("DEBUG: Passing name =", name);
+                        console.log("DEBUG: Passing question =", question);
                         console.log("DEBUG: Passing msg1 =", msg1);
                         console.log("DEBUG: Passing msg2 =", msg2);
                         console.log("DEBUG: Passing linkmsg3 =", linkmsg3);
@@ -50,7 +53,7 @@
                             console.warn("WARNING: linkmsg3 is empty, but continuing.");
                         }
                 
-                        let url = `yes.html?name=${encodeURIComponent(name)}&msg1=${encodeURIComponent(msg1)}&msg2=${encodeURIComponent(msg2)}&linkmsg3=${encodeURIComponent(linkmsg3 || "")}`;
+                        let url = `yes.html?name=${encodeURIComponent(name)}&question=${encodeURIComponent(question)}&msg1=${encodeURIComponent(msg1)}&msg2=${encodeURIComponent(msg2)}&linkmsg3=${encodeURIComponent(linkmsg3 || "")}`;
                         window.location.href = url;
                     }
 
