@@ -22,6 +22,19 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Cuti Thai';
+    src: url('TH/Thaifont/PhakchiThin-Regular.woff2') format('woff2'),
+         url('TH/Thaifont/PhakchiThin-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+#nameInput , #questionInput , #message1 , #message2 , #linkmessage3 {     
+    font-family: 'Cuti Thai', Arial, sans-serif ;      
+}
+
 
 body {
     background-color: #FCF4DF;
