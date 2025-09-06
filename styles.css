@@ -254,6 +254,11 @@ input[type="text"] {
     color: rgb(76, 69, 69);
 }
 
+.PageNote {
+    font-family:'Cupid Love', Arial, sans-serif;
+    color: rgb(76, 69, 69);
+}
+
 
 
 @media (max-width: 500px) {
@@ -279,6 +284,20 @@ input[type="text"] {
         transform: translateX(-0.8%);
     }
 
+    .line-svg4 {
+        display: block;           /* enable vertical margin + centering */
+        margin: 20px auto 0;     /* 200px from top, centered horizontally */
+        width: 340px;             /* add units, no quotes */
+        height: auto;  
+
+    }
+    .PageNote {
+        font-size: 30px;
+
+    }
+
+    
+
 
 
 /* @media (max-width: 767px) {
@@ -291,7 +310,7 @@ input[type="text"] {
     }
     } */
 
-@media (min-width: 510px) and (max-width: 1024px) {
+@media (min-width: 501px) and (max-width: 1023px) {
         /* Styles for tablets */
     .slideshow { 
         text-align: left;
@@ -312,10 +331,15 @@ input[type="text"] {
         transform: translateY(70%);
         }
 
-
     }
 
+    /*.PageNote {
+        font-size: 30px;
+        color: rgb(76, 69, 69);
+        margin-bottom: -15px;
+        margin-top: 15px;
 
+    } */
 
 @media (min-width: 1024px) {
     input[type="text"], .boxfill_text {
@@ -354,6 +378,16 @@ input[type="text"] {
         transform: translateY(10%) translateX(10%);
         }
 
+    .line-svg4 {
+        display: block;
+        margin: 30px auto 0;
+        width: 400px;             /* add units */
+        height: auto;
+    }
+}
+
+        
+
     /*
     .slideshow { 
         transform: translateX(205%);
@@ -368,5 +402,3 @@ input[type="text"] {
         font-size: 100px;
         background: none;
     }*/
-
-}
